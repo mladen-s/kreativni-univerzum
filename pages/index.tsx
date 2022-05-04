@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 // components
 import Header from "../components/Header";
+import HoneycombList from "../components/HoneycombList";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Header></Header>
-      <main className="main"></main>
+      <main className="main">
+        <HoneycombList></HoneycombList>
+      </main>
 
       <footer className="footer"></footer>
     </div>
