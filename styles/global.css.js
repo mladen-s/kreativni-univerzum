@@ -1,4 +1,7 @@
-:root {
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+    :root {
   --blue-darkest: #021224;
   --blue-dark: #052241;
   --blue-medium: #204174;
@@ -29,11 +32,26 @@ img {
   display: block;
 }
 
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 5rem;
+    font-family: 'Amatic SC', cursive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
+  }
 /* ########### */
 
 .root {
   width: 100%;
   height: 100%;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.root::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 .header {
   width: 100%;
@@ -63,9 +81,11 @@ img {
   display: block;
   color: var(--blue-light);
   padding: 30px;
-  border-radius: 20px;
-  border: 5px solid var(--blue-dark);
-  background-color: rgb(0, 0, 0, 0.5);
+  ${
+    "" /* border-radius: 20px;
+  border: 5px groove var(--blue-dark); */
+  }
+  ${"" /* background-color: rgb(0, 0, 0, 0.5); */}
   z-index: 2;
   white-space: normal;
 }
@@ -75,11 +95,17 @@ img {
   left: 0;
   width: 100%;
 }
+.main {
+  background-color: var(--blue-light);
+}
 .honeycomb-list {
   display: grid;
 }
 .honeycomb-item {
   text-align: center;
+}
+.toggle {
+  left: 50%;
 }
 @media screen and (max-width: 780px) {
   h1,
@@ -102,3 +128,5 @@ img {
     font-size: 1.1rem;
   }
 }
+
+`;
