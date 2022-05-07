@@ -37,7 +37,6 @@ const Header = () => {
   const toggle = () => {
     const btn: HTMLButtonElement | null = btnRef.current;
     const vid: HTMLVideoElement | null = vidRef.current;
-    console.log(vid);
 
     btn !== null && btn.classList.toggle("toggle");
     if (btn?.classList.contains("toggle")) {
