@@ -113,7 +113,6 @@ ${"" /* ############# Honeycomb ############## */}
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
@@ -139,7 +138,7 @@ ${"" /* ############# Honeycomb ############## */}
 {
   object-fit: cover;
   object-position: center;
-  filter: grayscale(100%);
+  filter: grayscale(100);
 }
 .honeycomb-item::before,
 .honeycomb-item::after
@@ -148,7 +147,7 @@ ${"" /* ############# Honeycomb ############## */}
 }
 .honeycomb-item::before,
 .honeycomb-item::after,
-.honeycomb-item_img
+.honeycomb-item span
 {
   top: -50%;
   left: 0;
@@ -160,6 +159,19 @@ ${"" /* ############# Honeycomb ############## */}
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   z-index: -1;
 }
+.honeycomb-item span,
+.honeycomb-item_img
+{
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(0% 0%, 100% -25%, 150% -75%, 150% 100%, -50% 200%, -25% 25%);
+  z-index: -1;
+}
 .honeycomb-item::before
 {
   background: #fff;
@@ -168,7 +180,7 @@ ${"" /* ############# Honeycomb ############## */}
 .honeycomb-item::after
 {
   background: #111111;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 350ms;
   -webkit-transition: opacity 350ms;
 }
@@ -177,18 +189,21 @@ ${"" /* ############# Honeycomb ############## */}
 {
   opacity: 0;
 }
-.honeycomb-item:hover
 .honeycomb-item_img
 {
-  filter: grayscale(0%);
+  filter: none;
 }
 .honeycomb-item:hover::before
 {
-  background: #fc5130;
+  background: transparent;
 }
 .honeycomb-item:hover::after
 {
   opacity: 0;
+}
+.honeycomb-item:hover .honey-title
+{
+  display: none;
 }
 .honey-title {
   height: 100%;
