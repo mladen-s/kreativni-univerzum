@@ -103,7 +103,7 @@ h1,
   background-size: cover;
 }
 .toggle {
-  left: 50%;
+  left: 50% !important;
 }
 
 
