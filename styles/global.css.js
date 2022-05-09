@@ -44,16 +44,17 @@ h1,
   }
 /* ########### */
 
-.root {
-  width: 100%;
-  height: 100%;
-  ${"" /* bellow code not working */}
+body {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
-.root::-webkit-scrollbar { 
-  ${"" /* bellow code not working */}
+body::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
+}
+
+.root {
+  width: 100%;
+  height: 100%;
 }
 .header {
   width: 100%;
@@ -146,8 +147,7 @@ ${"" /* ############# Honeycomb ############## */}
   content: '';
 }
 .honeycomb-item::before,
-.honeycomb-item::after,
-.honeycomb-item span
+.honeycomb-item::after
 {
   top: -50%;
   left: 0;
@@ -159,18 +159,17 @@ ${"" /* ############# Honeycomb ############## */}
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   z-index: -1;
 }
-.honeycomb-item span,
-.honeycomb-item_img
+.honeycomb-item span
 {
-  top: -50%;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  display: block;
-  position: absolute;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(0% 0%, 100% -25%, 150% -75%, 150% 100%, -50% 200%, -25% 25%);
-  z-index: -1;
+  top: -50% !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 200% !important;
+  display: block !important;
+  position: absolute !important;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+  z-index: -1 !important;
 }
 .honeycomb-item::before
 {
