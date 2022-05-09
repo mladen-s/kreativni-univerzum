@@ -1,12 +1,26 @@
 import type { NextPage } from "next";
+import { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 // components
 import GlobalCSS from "../styles/global.css";
-import Header from "../components/Header";
+import StyledHeader from "../components/Header";
 import HoneycombList from "../components/HoneycombList";
+import Main from "../components/Main";
 
 const Home: NextPage = () => {
+  const [explored, setExplored] = useState(false);
+  const [mainItems, setMainItems] = useState<JSX.Element>();
+
+  useEffect(() => {
+    if (explored) {
+      setMainItems(
+        <Main>
+          <HoneycombList />
+        </Main>
+      );
+    }
+  }, [explored]);
+
   return (
     <div className="root">
       <GlobalCSS />
@@ -16,10 +30,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header></Header>
-      <main className="main">
-        <HoneycombList></HoneycombList>
-      </main>
+      <StyledHeader
+        explored={explored}
+        setExplored={setExplored}
+      ></StyledHeader>
+      {mainItems}
 
       <footer className="footer"></footer>
     </div>

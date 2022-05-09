@@ -6,7 +6,8 @@ const StyledButton = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-family: "Caveat", "Arsenal", serif;
   font-weight: 700;
   top: 95%;
   left: 3%;

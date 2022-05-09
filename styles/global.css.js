@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Caveat', 'Arsenal', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1.3rem;
 }
@@ -38,7 +38,7 @@ h1,
   h4,
   h5,
   h6 {
-    font-size: 5rem;
+    font-size: 6rem;
     font-family: 'Amatic SC', cursive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
   }
@@ -56,21 +56,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
 }
-.header {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-.header::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgb(0, 0, 0, 0.3);
-}
+
 .video-container {
   position: absolute;
   object-fit: cover;
@@ -194,7 +180,8 @@ ${"" /* ############# Honeycomb ############## */}
 }
 .honeycomb-item:hover::before
 {
-  background: transparent;
+  background: black;
+  opacity: 0.3;
 }
 .honeycomb-item:hover::after
 {

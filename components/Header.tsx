@@ -1,7 +1,15 @@
-import VideoRef from "./Video";
-import React, { useRef } from "react";
-import StyledButton from "./StyledButton.style";
 import styled, { css } from "styled-components";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
+// components
+import StyledButton from "./StyledButton.style";
+import VideoRef from "./Video";
+import ExploreButton from "./ExploreButton.style";
 
 interface ISpan {
   primary?: boolean;
@@ -30,7 +38,21 @@ const Span = styled.span<ISpan>`
     `}
 `;
 
-const Header = () => {
+const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+`;
+
+interface IHeader {
+  explored: boolean;
+  setExplored: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({ explored, setExplored }: IHeader) => {
+  const [headerItems, setHeaderItems] = useState<JSX.Element>();
+
   const btnRef = useRef<HTMLButtonElement>(null);
   const vidRef = React.createRef<HTMLVideoElement>();
 
@@ -46,18 +68,57 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    if (!explored) {
+      setHeaderItems(
+        <Container>
+          <VideoRef vid={"/video.mp4"} ref={vidRef} />
+          <h1 className="site-title">Креативни Универзум</h1>
+          <ExploreButton onClick={() => setExplored(true)}>
+            Истражи
+          </ExploreButton>
+          <StyledButton className="controls" onClick={toggle}>
+            <Span>Пусти</Span>
+            <Span>Пауза</Span>
+            <Span
+              primary
+              className="switch"
+              ref={btnRef ? btnRef : null}
+            ></Span>
+          </StyledButton>
+        </Container>
+      );
+    } else {
+      setHeaderItems(<p></p>);
+    }
+  }, [explored]);
+
   return (
     <header className="header">
       <div className="nav"></div>
-      <VideoRef vid={"/video.mp4"} ref={vidRef} />
-      <h1 className="site-title">Креативни Универзум</h1>
-      <StyledButton className="controls" onClick={toggle}>
-        <Span>Пусти</Span>
-        <Span>Пауза</Span>
-        <Span primary className="switch" ref={btnRef ? btnRef : null}></Span>
-      </StyledButton>
+      {headerItems}
     </header>
   );
 };
 
-export default Header;
+const StyledHeader = styled(Header)`
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  -webkit-transition: all 1.4s ease-in-out;
+  transition: all 1.4s ease-in-out;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgb(0, 0, 0, 0.3);
+  }
+`;
+
+export default StyledHeader;
