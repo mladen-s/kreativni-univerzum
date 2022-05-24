@@ -1,11 +1,22 @@
 import type { NextPage } from "next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Children } from "react";
 import Head from "next/head";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 // components
 import GlobalCSS from "../styles/global.css";
 import StyledHeader from "../components/Header";
 import HoneycombList from "../components/HoneycombList";
 import Main from "../components/Main";
+import { type } from "os";
+
+interface prop {
+  key: string;
+  children: JSX.Element | JSX.Element[] | undefined;
+}
+
+const Container = ({ key, children }: prop) => {
+  return <div key={key}>{children}</div>;
+};
 
 const Home: NextPage = () => {
   const [explored, setExplored] = useState(false);
@@ -17,6 +28,13 @@ const Home: NextPage = () => {
         <Main>
           <HoneycombList />
         </Main>
+      );
+    } else {
+      setMainItems(
+        <StyledHeader
+          explored={explored}
+          setExplored={setExplored}
+        ></StyledHeader>
       );
     }
   }, [explored]);
@@ -30,11 +48,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <StyledHeader
-        explored={explored}
-        setExplored={setExplored}
-      ></StyledHeader>
-      {mainItems}
+      <TransitionGroup>
+        <CSSTransition
+          in={true}
+          appear={true}
+          timeout={1800}
+          classNames="transition"
+        >
+          <Container key={explored.toString()}>{mainItems}</Container>
+        </CSSTransition>
+      </TransitionGroup>
 
       <footer className="footer"></footer>
     </div>

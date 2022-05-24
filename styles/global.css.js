@@ -57,6 +57,16 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+.zoom-video {
+    -webkit-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    -moz-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
+    -webkit-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
+    -o-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
+    -ms-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
+    transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
+}
+
 .video-container {
   position: absolute;
   object-fit: cover;
@@ -93,6 +103,29 @@ body::-webkit-scrollbar {
   left: 50% !important;
 }
 
+${"" /* transition */}
+.transition-appear {
+  opacity: 0.1;
+  transform: scale(4.5);
+}
+
+.transition-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1800ms ease-in;
+}
+.transition-enter {}
+
+.transition-enter-active {}
+.transition-exit {
+  opacity: 1;
+  transform: scale(1.5);
+  transition: all 1800ms ease-out;
+}
+.transition-exit.transition-exit-active {
+  opacity: 0.6;
+  transform: scale(1.5);
+}
 
 ${"" /* ############# Honeycomb ############## */}
 .honeycomb-list {

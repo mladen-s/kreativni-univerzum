@@ -1,11 +1,5 @@
 import styled, { css } from "styled-components";
-import React, {
-  useRef,
-  useState,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import React, { useRef, useState, useEffect } from "react";
 // components
 import StyledButton from "./StyledButton.style";
 import VideoRef from "./Video";
@@ -71,7 +65,7 @@ const Header = ({ explored, setExplored }: IHeader) => {
   useEffect(() => {
     if (!explored) {
       setHeaderItems(
-        <Container>
+        <Container className={explored ? "zoom-video" : ""}>
           <VideoRef vid={"/video.mp4"} ref={vidRef} />
           <h1 className="site-title">Креативни Универзум</h1>
           <ExploreButton onClick={() => setExplored(true)}>
@@ -105,9 +99,6 @@ const StyledHeader = styled(Header)`
   width: 100%;
   min-height: 100vh;
   position: relative;
-
-  -webkit-transition: all 1.4s ease-in-out;
-  transition: all 1.4s ease-in-out;
 
   &:before {
     content: "";
