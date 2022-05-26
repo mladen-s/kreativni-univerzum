@@ -112,19 +112,39 @@ ${"" /* transition */}
 .transition-appear-active {
   opacity: 1;
   transform: scale(1);
-  transition: all 1800ms ease-in;
+  transition: all 1800ms ease-in-out;
 }
-.transition-enter {}
-
-.transition-enter-active {}
+.transition-enter {
+  opacity: 0;
+  transform: scale(2);
+}
+.transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1500ms ease-in;
+}
+${
+  "" /* .transition-enter-done {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1500ms ease-in;
+}  */
+}
 .transition-exit {
   opacity: 1;
-  transform: scale(1.5);
-  transition: all 1800ms ease-out;
+  transform: scale(1);
 }
-.transition-exit.transition-exit-active {
-  opacity: 0.6;
-  transform: scale(1.5);
+.transition-exit-active {
+  opacity: 0;
+  transform: scale(3);
+  transition: all 1200ms linear;
+}
+${
+  "" /* .transition-exit-done {
+  opacity: 0.1;
+  transform: scale(4.5);
+  transition: all 1200ms linear;
+} */
 }
 
 ${"" /* ############# Honeycomb ############## */}

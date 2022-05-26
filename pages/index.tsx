@@ -1,21 +1,23 @@
 import type { NextPage } from "next";
 import { useState, useEffect, Children } from "react";
 import Head from "next/head";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import {
+  CSSTransition,
+  TransitionGroup,
+  SwitchTransition,
+} from "react-transition-group";
 // components
 import GlobalCSS from "../styles/global.css";
 import StyledHeader from "../components/Header";
 import HoneycombList from "../components/HoneycombList";
 import Main from "../components/Main";
-import { type } from "os";
 
 interface prop {
-  key: string;
   children: JSX.Element | JSX.Element[] | undefined;
 }
 
-const Container = ({ key, children }: prop) => {
-  return <div key={key}>{children}</div>;
+const Container = ({ children }: prop) => {
+  return <div>{children}</div>;
 };
 
 const Home: NextPage = () => {
@@ -48,16 +50,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TransitionGroup>
+      <SwitchTransition mode="out-in">
         <CSSTransition
-          in={true}
+          key={explored.toString()}
+          in={!explored}
           appear={true}
           timeout={1800}
           classNames="transition"
+          unmountOnExit
         >
-          <Container key={explored.toString()}>{mainItems}</Container>
+          <Container>{mainItems}</Container>
         </CSSTransition>
-      </TransitionGroup>
+      </SwitchTransition>
 
       <footer className="footer"></footer>
     </div>
