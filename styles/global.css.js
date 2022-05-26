@@ -123,13 +123,6 @@ ${"" /* transition */}
   transform: scale(1);
   transition: all 1500ms ease-in;
 }
-${
-  "" /* .transition-enter-done {
-  opacity: 1;
-  transform: scale(1);
-  transition: all 1500ms ease-in;
-}  */
-}
 .transition-exit {
   opacity: 1;
   transform: scale(1);
@@ -138,13 +131,6 @@ ${
   opacity: 0;
   transform: scale(3);
   transition: all 1200ms linear;
-}
-${
-  "" /* .transition-exit-done {
-  opacity: 0.1;
-  transform: scale(4.5);
-  transition: all 1200ms linear;
-} */
 }
 
 ${"" /* ############# Honeycomb ############## */}
