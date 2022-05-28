@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import StyledButton from "./StyledButton.style";
 import VideoRef from "./Video";
 import ExploreButton from "./ExploreButton.style";
+import Container from "./Container";
 
 interface ISpan {
   primary?: boolean;
@@ -32,13 +33,6 @@ const Span = styled.span<ISpan>`
     `}
 `;
 
-const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-`;
-
 interface IHeader {
   explored: boolean;
   setExplored: React.Dispatch<React.SetStateAction<boolean>>;
@@ -65,7 +59,7 @@ const Header = ({ explored, setExplored }: IHeader) => {
   useEffect(() => {
     if (!explored) {
       setHeaderItems(
-        <Container className={explored ? "zoom-video" : ""}>
+        <Container>
           <VideoRef vid={"/video.mp4"} ref={vidRef} />
           <h1 className="site-title">Креативни Универзум</h1>
           <ExploreButton onClick={() => setExplored(true)}>

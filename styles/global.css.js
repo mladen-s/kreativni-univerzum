@@ -57,16 +57,6 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
-.zoom-video {
-    -webkit-transition: transform 1s ease-out;
-    transition: transform 1s ease-out;
-    -moz-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
-    -webkit-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
-    -o-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
-    -ms-transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
-    transform: ${(props) => (props.explored ? "scale(1)" : "scale(2)")};
-}
-
 .video-container {
   position: absolute;
   object-fit: cover;
@@ -80,11 +70,6 @@ body::-webkit-scrollbar {
   display: block;
   color: var(--blue-light);
   padding: 30px;
-  ${
-    "" /* border-radius: 20px;
-  border: 5px groove var(--blue-dark); */
-  }
-  ${"" /* background-color: rgb(0, 0, 0, 0.5); */}
   z-index: 2;
   white-space: normal;
 }
