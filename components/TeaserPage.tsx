@@ -15,7 +15,9 @@ const TeaserPage = () => {
   return (
     <Container className="teaser-container">
       <TeaserTitle>Да ли сте довољно креативни за наш универзум?</TeaserTitle>
-      <ExploreButton>Пријави се</ExploreButton>
+      <ExploreButton>
+        <a href="https://forms.gle/cMMMAjbxwquomP178">Пријави се</a>
+      </ExploreButton>
     </Container>
   );
 };
