@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const ExploreButton = styled(Button)`
+  position: relative;
   display: block;
   padding: 0.7rem;
   font-size: 2.2rem;
@@ -14,10 +15,31 @@ const ExploreButton = styled(Button)`
   cursor: pointer;
   transition: all 0.3s linear;
 
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    width: 0;
+    background-color: var(--blue-light);
+    z-index: 3;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
   &:hover {
-    border: 5px solid black;
-    border-radius: 45%;
-    background-color: var(--blue-dark);
+    &::before,
+    &::after {
+      width: 100%;
+
+      transition: all 0.2s linear;
+    }
   }
 `;
 
