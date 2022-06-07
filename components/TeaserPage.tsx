@@ -6,8 +6,8 @@ const TeaserTitle = styled.h1`
   color: var(--blue-light);
   font-size: 4rem;
 
-  @media screen and (max-width: 780px) {
-    font-size: 2.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 

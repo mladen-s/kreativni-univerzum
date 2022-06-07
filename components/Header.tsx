@@ -28,7 +28,13 @@ const Span = styled.span<ISpan>`
       border-radius: 10px;
       transition: all 0.3s linear;
       &:hover {
-        background-color: var(--blue-medium);
+        background: var(--blue-medium);
+      }
+
+      @media screen and (max-width: 768px) {
+        &:hover {
+          background: var(--blue-darkest);
+        }
       }
     `}
 `;

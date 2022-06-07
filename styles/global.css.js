@@ -87,35 +87,48 @@ body::-webkit-scrollbar {
 .toggle {
   left: 50% !important;
 }
+.teaser-container {
+  padding: 10% 20%;
+  text-align: center;
+}
 
 ${"" /* transition */}
 .transition-appear {
   opacity: 0.1;
   transform: scale(4.5);
+  -webkit-transform: scale(4.5);
 }
 
 .transition-appear-active {
   opacity: 1;
   transform: scale(1);
   transition: all 1800ms ease-in-out;
+  -webkit-transform: scale(1);
+  -webkit-transition: all 1800ms ease-in-out;
 }
 .transition-enter {
   opacity: 0;
   transform: scale(2);
+  -webkit-transform: scale(2);
 }
 .transition-enter-active {
   opacity: 1;
   transform: scale(1);
   transition: all 1500ms ease-in;
+  -webkit-transform: scale(1);
+  -webkit-transition: all 1500ms ease-in;
 }
 .transition-exit {
   opacity: 1;
   transform: scale(1);
+  -webkit-transform: scale(1);
 }
 .transition-exit-active {
   opacity: 0;
   transform: scale(3);
   transition: all 1200ms linear;
+  -webkit-transform: scale(3);
+  -webkit-transition: all 1200ms linear;
 }
 
 ${"" /* ############# Honeycomb ############## */}
@@ -240,7 +253,7 @@ ${"" /* ############# Honeycomb ############## */}
 ${"" /* ###################### */}
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   h1,
   h2,
   h3,
