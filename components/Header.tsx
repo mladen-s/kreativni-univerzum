@@ -3,8 +3,8 @@ import React, { useRef, useState, useEffect } from "react";
 // components
 import StyledButton from "./StyledButton.style";
 import VideoRef from "./Video";
-import ExploreButton from "./ExploreButton.style";
 import Container from "./Container";
+import ScrollDownButton from "./ScrollDownButton";
 
 interface ISpan {
   primary?: boolean;
@@ -39,12 +39,12 @@ const Span = styled.span<ISpan>`
     `}
 `;
 
-interface IHeader {
-  explored: boolean;
-  setExplored: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface IHeader {
+//   explored: boolean;
+//   setExplored: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
-const Header = ({ explored, setExplored }: IHeader) => {
+const Header = () => {
   const [headerItems, setHeaderItems] = useState<JSX.Element>();
 
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -63,14 +63,14 @@ const Header = ({ explored, setExplored }: IHeader) => {
   };
 
   useEffect(() => {
-    if (!explored) {
+    // check viewport size
+    const vw = Math.max(window.innerWidth || 0);
+    if (vw > 768) {
       setHeaderItems(
         <Container>
           <VideoRef vid={"/video.mp4"} ref={vidRef} />
           <h1 className="site-title">Креативни Универзум</h1>
-          <ExploreButton onClick={() => setExplored(true)}>
-            Истражи
-          </ExploreButton>
+          <ScrollDownButton></ScrollDownButton>
           <StyledButton className="controls" onClick={toggle}>
             <Span>Пусти</Span>
             <Span>Пауза</Span>
@@ -83,9 +83,14 @@ const Header = ({ explored, setExplored }: IHeader) => {
         </Container>
       );
     } else {
-      setHeaderItems(<p></p>);
+      setHeaderItems(
+        <Container>
+          <h1 className="site-title">Креативни Универзум</h1>
+          <ScrollDownButton></ScrollDownButton>
+        </Container>
+      );
     }
-  }, [explored]);
+  }, []);
 
   return (
     <header className="header">
@@ -98,6 +103,7 @@ const Header = ({ explored, setExplored }: IHeader) => {
 const StyledHeader = styled(Header)`
   width: 100%;
   min-height: 100vh;
+  text-align: center;
   position: relative;
 
   &:before {

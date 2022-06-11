@@ -17,25 +17,25 @@ const Container = ({ children }: prop) => {
 };
 
 const Home: NextPage = () => {
-  const [explored, setExplored] = useState(false);
-  const [mainItems, setMainItems] = useState<JSX.Element>();
+  // const [explored, setExplored] = useState(false);
+  // const [mainItems, setMainItems] = useState<JSX.Element>();
 
-  useEffect(() => {
-    if (explored) {
-      setMainItems(
-        <Main>
-          <TeaserPage />
-        </Main>
-      );
-    } else {
-      setMainItems(
-        <StyledHeader
-          explored={explored}
-          setExplored={setExplored}
-        ></StyledHeader>
-      );
-    }
-  }, [explored]);
+  // useEffect(() => {
+  //   if (explored) {
+  //     setMainItems(
+  //       <Main>
+  //         <TeaserPage />
+  //       </Main>
+  //     );
+  //   } else {
+  //     setMainItems(
+  //       <StyledHeader
+  //         explored={explored}
+  //         setExplored={setExplored}
+  //       ></StyledHeader>
+  //     );
+  //   }
+  // }, [explored]);
 
   return (
     <div className="root">
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <SwitchTransition mode="out-in">
+      {/* <SwitchTransition mode="out-in">
         <CSSTransition
           key={explored.toString()}
           in={!explored}
@@ -64,7 +64,13 @@ const Home: NextPage = () => {
         >
           <Container>{mainItems}</Container>
         </CSSTransition>
-      </SwitchTransition>
+      </SwitchTransition> */}
+
+      <StyledHeader></StyledHeader>
+
+      <Main>
+        <TeaserPage />
+      </Main>
 
       <footer className="footer"></footer>
     </div>

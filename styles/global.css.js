@@ -80,9 +80,7 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 .main {
-  height: 2000px;
   background-image: url('/IMG-6cd4f8b2d220e72b39542766f2356c77-V.jpg');
-  background-size: cover;
 }
 .toggle {
   left: 50% !important;
@@ -262,6 +260,11 @@ ${"" /* ###################### */}
   h6 {
     font-size: 2.2rem;
   }
+
+  header {
+    background-image: url("/IMG-6cd4f8b2d220e72b39542766f2356c77-V.jpg");
+    z-index: 2;
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -271,7 +274,7 @@ ${"" /* ###################### */}
   h4,
   h5,
   h6 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 }
 
