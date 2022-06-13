@@ -143,9 +143,7 @@ ${"" /* ################# Slide ############### */}
   h6 {
     font-size: 2.2rem;
   }
-  .main {
-  background-image: url('/IMG-6cd4f8b2d220e72b39542766f2356c77-V.jpg');
-  }
+  
   header {
     background-image: url("/IMG-6cd4f8b2d220e72b39542766f2356c77-V.jpg");
     z-index: 2;
