@@ -1,24 +1,25 @@
 import Container from "./Container";
 import ExploreButton from "./ExploreButton.style";
 import styled from "styled-components";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const TeaserTitle = styled.h1`
   color: var(--blue-light);
-  font-size: 4rem;
+  font-size: 3.5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
 const TeaserPage = () => {
+  const options = {
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
   useEffect(() => {
     const sliders = document.querySelectorAll(".slide");
-    const options = {
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
 
     const appearOnScroll = new IntersectionObserver(function (
       entries,
@@ -38,7 +39,7 @@ const TeaserPage = () => {
     sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
     });
-  }, []);
+  }, [options]);
 
   return (
     <Container className="teaser-container">

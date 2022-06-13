@@ -68,7 +68,7 @@ const Header = () => {
     if (vw > 768) {
       setHeaderItems(
         <Container>
-          <VideoRef vid={"/video.mp4"} ref={vidRef} />
+          <VideoRef vid={"/newVideo.mp4"} ref={vidRef} />
           <h1 className="site-title">Креативни Универзум</h1>
           <ScrollDownButton></ScrollDownButton>
           <StyledButton className="controls" onClick={toggle}>
