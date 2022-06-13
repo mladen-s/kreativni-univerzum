@@ -1,7 +1,11 @@
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
+import {
+  CSSTransition,
+  SwitchTransition,
+  TransitionGroup,
+} from "react-transition-group";
 // components
 import GlobalCSS from "../styles/global.css";
 import StyledHeader from "../components/Header";
@@ -20,23 +24,6 @@ const Home: NextPage = () => {
   // const [explored, setExplored] = useState(false);
   // const [mainItems, setMainItems] = useState<JSX.Element>();
 
-  // useEffect(() => {
-  //   if (explored) {
-  //     setMainItems(
-  //       <Main>
-  //         <TeaserPage />
-  //       </Main>
-  //     );
-  //   } else {
-  //     setMainItems(
-  //       <StyledHeader
-  //         explored={explored}
-  //         setExplored={setExplored}
-  //       ></StyledHeader>
-  //     );
-  //   }
-  // }, [explored]);
-
   return (
     <div className="root">
       <GlobalCSS />
@@ -53,20 +40,16 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      {/* <SwitchTransition mode="out-in">
+      <TransitionGroup>
         <CSSTransition
-          key={explored.toString()}
-          in={!explored}
           appear={true}
           timeout={1800}
           classNames="transition"
           unmountOnExit
         >
-          <Container>{mainItems}</Container>
+          <StyledHeader></StyledHeader>
         </CSSTransition>
-      </SwitchTransition> */}
-
-      <StyledHeader></StyledHeader>
+      </TransitionGroup>
 
       <Main>
         <TeaserPage />

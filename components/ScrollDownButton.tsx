@@ -26,7 +26,9 @@ const StyledSDB = styled(Button)`
 const ScrollDownButton = () => {
   return (
     <StyledSDB>
-      <BsChevronDoubleDown></BsChevronDoubleDown>
+      <a href="#main">
+        <BsChevronDoubleDown></BsChevronDoubleDown>
+      </a>
     </StyledSDB>
   );
 };

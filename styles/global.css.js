@@ -13,6 +13,10 @@ body {
   font-family: 'Caveat', 'Arsenal', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1.3rem;
+  scroll-behavior: smooth;
+  background-color: var(--blue-darkest);
+  z-index: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -64,7 +68,7 @@ body::-webkit-scrollbar {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 .site-title {
   display: block;
@@ -128,6 +132,20 @@ ${"" /* transition */}
   -webkit-transform: scale(3);
   -webkit-transition: all 1200ms linear;
 }
+${"" /* ################# Slide ############### */}
+.slide {
+  transform: translateX(100%);
+  transition: transform 1000ms linear;
+  -webkit-transform: translateX(100%);
+  -webkit-transition: transform 1000ms linear;
+}
+.slide-active {
+  transform: translateX(0);
+  transition: transform 1000ms linear;
+  -webkit-transform: translateX(0);
+  -webkit-transition: transform 1000ms linear;
+}
+
 
 ${"" /* ############# Honeycomb ############## */}
 .honeycomb-list {

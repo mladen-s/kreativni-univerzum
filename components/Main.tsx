@@ -3,7 +3,11 @@ interface IMain {
 }
 
 const Main = ({ children }: IMain) => {
-  return <main className="main">{children}</main>;
+  return (
+    <main className="main" id="main">
+      {children}
+    </main>
+  );
 };
 
 export default Main;
