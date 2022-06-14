@@ -14,6 +14,11 @@ const TeaserTitle = styled.h1`
       margin: 50px 0 0;
     }
   }
+
+  @media screen and (max-height: 650px) {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
 `;
 
 const TeaserContainer = styled.div`
@@ -35,7 +40,7 @@ const TeaserContainer = styled.div`
     top: -30px;
     left: 0;
     background-color: var(--blue-light);
-    opacity: 0.6;
+    opacity: 0.4;
   }
 
   @media screen and (max-width: 768px) {
@@ -48,11 +53,6 @@ const TeaserContainer = styled.div`
 
   @media screen and (max-height: 650px) {
     min-height: 70vh;
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 0;
-    }
 
     &::before {
       top: -25px;

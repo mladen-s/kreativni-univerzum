@@ -43,6 +43,7 @@ const ExploreButton = styled(Button)`
   }
 
   @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
     margin: 150px 0 0;
   }
 `;
