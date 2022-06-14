@@ -20,7 +20,8 @@ const TeaserContainer = styled.div`
   position: relative;
   padding: 0 5% 0 40%;
   width: 100%;
-  min-height: 70vh;
+
+  flex: 2 0 auto;
   display: grid;
   place-items: center;
   z-index: 2;
@@ -31,18 +32,30 @@ const TeaserContainer = styled.div`
     content: "";
     height: 1px;
     width: 100%;
-    top: -50px;
+    top: -30px;
     left: 0;
     background-color: var(--blue-light);
-    opacity: 0.3;
+    opacity: 0.6;
   }
 
   @media screen and (max-width: 768px) {
     padding: 0;
-    min-height: 80vh;
 
     &::before {
-      top: 0;
+      top: -25px;
+    }
+  }
+
+  @media screen and (max-height: 650px) {
+    min-height: 70vh;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+
+    &::before {
+      top: -25px;
     }
   }
 `;

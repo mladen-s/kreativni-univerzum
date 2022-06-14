@@ -8,7 +8,7 @@ const StyledMain = styled.main`
   background-repeat: no-repeat;
 
   z-index: 1;
-  min-height: 80vh;
+  height: 100vh;
 
   padding: 7% 10% 0;
   display: flex;

@@ -4,8 +4,10 @@ import { BiCopyright } from "react-icons/bi";
 
 const StyledFooter = styled.footer`
   padding: 20px;
-  min-height: 10vh;
+  min-height: 15vh;
+
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: center;
   color: var(--blue-light);
@@ -45,6 +47,10 @@ const StyledFooter = styled.footer`
     &::after {
       opacity: 0.4;
     }
+  }
+
+  @media screen and (max-height: 650px) {
+    padding: 0 20px 40px;
   }
 `;
 
