@@ -42,7 +42,7 @@ h1,
   h4,
   h5,
   h6 {
-    font-size: 6rem;
+    font-size: 4rem;
     font-family: 'Amatic SC', cursive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
   }
@@ -125,7 +125,7 @@ ${"" /* ################# Slide ############### */}
   h4,
   h5,
   h6 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 
   header {
@@ -143,7 +143,7 @@ ${"" /* ################# Slide ############### */}
   h4,
   h5,
   h6 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
 
