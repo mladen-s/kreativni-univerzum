@@ -39,11 +39,6 @@ const Span = styled.span<ISpan>`
     `}
 `;
 
-// interface IHeader {
-//   explored: boolean;
-//   setExplored: React.Dispatch<React.SetStateAction<boolean>>;
-// }
-
 const Header = () => {
   const [headerItems, setHeaderItems] = useState<JSX.Element>();
 

@@ -41,6 +41,10 @@ const ExploreButton = styled(Button)`
       transition: all 0.2s linear;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 150px 0 0;
+  }
 `;
 
 export default ExploreButton;

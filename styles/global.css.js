@@ -14,7 +14,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1.3rem;
   scroll-behavior: smooth;
-  background-color: var(--blue-darkest);
+  background-color: black;
   z-index: 0;
   overflow-x: hidden;
 }
@@ -83,27 +83,11 @@ body::-webkit-scrollbar {
   left: 0;
   width: 100%;
 }
-.main {
-  background-color: black;
-  background-image: url('/IMG-78f5e7b2341131cef9e3a2e20309af9e-V.jpg');
-  background-position: 0%;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  
-  z-index: 1;
-  height: 100vh;
 
-  padding-left: 40%;
-  display: flex;
-  justify-content: right;
-}
 .toggle {
   left: 50% !important;
 }
-.teaser-container {
-  padding: 10% 20%;
-  text-align: center;
-}
+
 
 ${"" /* transition */}
 .transition-appear {
@@ -143,11 +127,13 @@ ${"" /* ################# Slide ############### */}
   h6 {
     font-size: 2.2rem;
   }
-  
+
   header {
     background-image: url("/IMG-6cd4f8b2d220e72b39542766f2356c77-V.jpg");
     z-index: 2;
   }
+
+
 }
 
 @media screen and (max-width: 370px) {

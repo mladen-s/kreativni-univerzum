@@ -1,16 +1,12 @@
 import type { NextPage } from "next";
-import { useState, useEffect } from "react";
 import Head from "next/head";
-import {
-  CSSTransition,
-  SwitchTransition,
-  TransitionGroup,
-} from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 // components
 import GlobalCSS from "../styles/global.css";
 import StyledHeader from "../components/Header";
 import TeaserPage from "../components/TeaserPage";
 import Main from "../components/Main";
+import Footer from "../components/Footer";
 
 interface prop {
   children: JSX.Element | JSX.Element[] | undefined;
@@ -53,9 +49,8 @@ const Home: NextPage = () => {
 
       <Main>
         <TeaserPage />
+        <Footer />
       </Main>
-
-      <footer className="footer"></footer>
     </div>
   );
 };
