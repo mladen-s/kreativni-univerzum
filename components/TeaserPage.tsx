@@ -15,7 +15,7 @@ const TeaserTitle = styled.h1`
     }
   }
 
-  @media screen and (max-height: 650px) {
+  @media screen and (max-height: 650px) and (min-width: 800px) {
     font-size: 2.5rem;
     margin-top: 0;
   }
