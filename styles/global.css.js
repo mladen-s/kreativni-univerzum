@@ -136,7 +136,7 @@ ${"" /* ################# Slide ############### */}
   }
 
   header {
-    background-image: url("/IMG-5391e7ec601012747dbae5d459af5fe5-V.jpg");
+    background-image: url("/IMG-59d4a92c019748fa0fcf3cd55a722728-V.jpg");
     background-size: cover;
     z-index: 2;
   }
