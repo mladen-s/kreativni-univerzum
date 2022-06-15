@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 // components
 import StyledButton from "./StyledButton.style";
 import VideoRef from "./Video";
@@ -64,6 +65,15 @@ const Header = () => {
       setHeaderItems(
         <Container>
           <VideoRef vid={"/newVideo.mp4"} ref={vidRef} />
+          <div className="logo">
+            <Image
+              src="/logo-inverted.png"
+              alt="logo"
+              width={50}
+              height={60}
+            ></Image>
+          </div>
+
           <h1 className="site-title">Креативни Универзум</h1>
           <ScrollDownButton></ScrollDownButton>
           <StyledButton className="controls" onClick={toggle}>
@@ -80,6 +90,14 @@ const Header = () => {
     } else {
       setHeaderItems(
         <Container>
+          <div className="logo">
+            <Image
+              src="/logo-inverted.png"
+              alt="logo"
+              width={50}
+              height={60}
+            ></Image>
+          </div>
           <h1 className="site-title">Креативни Универзум</h1>
           <ScrollDownButton></ScrollDownButton>
         </Container>

@@ -84,6 +84,13 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
+.logo {
+  z-index: 2;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+
 .toggle {
   left: 50% !important;
 }

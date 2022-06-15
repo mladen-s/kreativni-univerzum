@@ -9,10 +9,7 @@ const TeaserTitle = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
-
-    button {
-      margin: 50px 0 0;
-    }
+    margin: -50px 0 0;
   }
 
   @media screen and (max-height: 650px) and (min-width: 800px) {
