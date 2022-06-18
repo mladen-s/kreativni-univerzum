@@ -6,6 +6,7 @@ export default createGlobalStyle`
   --blue-dark: #052241;
   --blue-medium: #204174;
   --blue-light: #b3e6ec;
+  --orange-medium: #fabd52;
 }
 
 html,
@@ -72,7 +73,7 @@ body::-webkit-scrollbar {
 }
 .site-title {
   display: block;
-  color: var(--blue-light);
+  color: var(--orange-medium);
   padding: 30px;
   z-index: 2;
   white-space: normal;
@@ -88,7 +89,10 @@ body::-webkit-scrollbar {
   z-index: 2;
   position: absolute;
   top: 3%;
-  left: 3%;
+  left: 3%; 
+}
+.logo img {
+  border-radius: 45%;
 }
 
 .toggle {
@@ -113,9 +117,9 @@ ${"" /* transition */}
 
 ${"" /* ################# Slide ############### */}
 .slide {
-  transform: translateX(100%);
+  transform: translateX(500%);
   transition: transform 1000ms linear;
-  -webkit-transform: translateX(100%);
+  -webkit-transform: translateX(500%);
   -webkit-transition: transform 1000ms linear;
 }
 .slide.slide-active {
@@ -141,6 +145,9 @@ ${"" /* ################# Slide ############### */}
     z-index: 2;
   }
 
+  .site-title {
+  margin-top: -50px;
+  }
 
 }
 

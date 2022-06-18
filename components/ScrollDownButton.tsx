@@ -11,7 +11,7 @@ const StyledSDB = styled(Button)`
   font-family: "Caveat", "Arsenal", serif;
   font-weight: 700;
   background-color: var(--blue-dark) 1;
-  color: var(--blue-light);
+  color: var(--orange-medium);
   border: 2px solid transparent;
   border-radius: 50%;
   z-index: 2;
@@ -20,6 +20,10 @@ const StyledSDB = styled(Button)`
 
   &:hover {
     transform: translateY(2rem) scale(1.3);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 100px;
   }
 `;
 

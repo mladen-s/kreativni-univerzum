@@ -7,6 +7,8 @@ import StyledHeader from "../components/Header";
 import TeaserPage from "../components/TeaserPage";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
+import Preloader from "../components/Preloader";
+import { useEffect, useState } from "react";
 
 interface prop {
   children: JSX.Element | JSX.Element[] | undefined;
@@ -17,8 +19,12 @@ const Container = ({ children }: prop) => {
 };
 
 const Home: NextPage = () => {
+  const [loaded, setLoaded] = useState(false);
   // const [explored, setExplored] = useState(false);
   // const [mainItems, setMainItems] = useState<JSX.Element>();
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   return (
     <div className="root">
