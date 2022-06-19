@@ -1,6 +1,6 @@
 import ExploreButton from "./ExploreButton.style";
 import styled from "styled-components";
-import React, { useEffect, useMemo, useState, useRef } from "react";
+import React, { useRef, useCallback, ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 
 const TeaserTitle = styled.h1`
@@ -58,20 +58,54 @@ const TeaserContainer = styled.div`
   }
 `;
 
+type RefCallback<T> = {
+  bivarianceHack(instance: T | null): void;
+}["bivarianceHack"];
+interface InViewRefs {
+  inViewRef: RefCallback<Element>;
+  ref: (node?: Element | null | undefined) => void;
+  inView: boolean;
+  entry?: IntersectionObserverEntry | undefined;
+}
+
 const TeaserPage = () => {
   // const [elements, setElements] = useState<Element[]>([]);
-  const { ref, inView, entry } = useInView({
+  const refs = useRef<
+    | React.MutableRefObject<HTMLHeadingElement>
+    | React.MutableRefObject<HTMLButtonElement>
+    | null
+  >(null);
+  const { inViewRef, inView }: InViewRefs = useInView({
     threshold: 1,
     rootMargin: "0px",
     root: null,
     triggerOnce: true,
   });
 
+  const setRefs: RefCallback<
+    | React.MutableRefObject<HTMLHeadingElement>
+    | React.MutableRefObject<HTMLButtonElement>
+    | Element
+  > = useCallback(
+    (
+      node:
+        | React.MutableRefObject<HTMLHeadingElement>
+        | React.MutableRefObject<HTMLButtonElement>
+        | null
+    ) => {
+      // Ref's from useRef needs to have the node assigned to `current`
+      refs.current = node;
+      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+      inViewRef(node);
+    },
+    [inViewRef]
+  );
+
   // const headline = useRef() as React.MutableRefObject<HTMLHeadingElement>;
   // const button = useRef() as React.MutableRefObject<HTMLButtonElement>;
 
-  const headline = useRef<HTMLHeadingElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
+  // const headline = useRef<HTMLHeadingElement>(null);
+  // const button = useRef<HTMLButtonElement>(null);
 
   // const options = useMemo(() => {
   //   return {
@@ -107,13 +141,13 @@ const TeaserPage = () => {
     <TeaserContainer>
       <TeaserTitle
         className={`slide ${inView ? "slide-active" : ""}`}
-        ref={ref}
+        ref={setRefs}
       >
         Да ли сте довољно креативни за наш универзум?
       </TeaserTitle>
       <ExploreButton
         className={`slide ${inView ? "slide-active" : ""}`}
-        ref={ref}
+        ref={setRefs}
       >
         <a href="https://forms.gle/cMMMAjbxwquomP178">Пријави се</a>
       </ExploreButton>
