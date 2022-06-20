@@ -7,7 +7,7 @@ export interface IButton {
 }
 
 const Button = React.forwardRef<HTMLButtonElement, IButton>(
-  ({ className, onClick, children }, ref) => {
+  ({ className, onClick, children }, ref?) => {
     return (
       <button className={className} ref={ref} onClick={onClick}>
         {children}

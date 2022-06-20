@@ -1,7 +1,6 @@
 import ExploreButton from "./ExploreButton.style";
 import styled from "styled-components";
-import React, { useRef, useCallback, ReactNode } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 
 const TeaserTitle = styled.h1`
   color: var(--orange-medium);
@@ -58,97 +57,11 @@ const TeaserContainer = styled.div`
   }
 `;
 
-type RefCallback<T> = {
-  bivarianceHack(instance: T | null): void;
-}["bivarianceHack"];
-interface InViewRefs {
-  inViewRef: RefCallback<Element>;
-  ref: (node?: Element | null | undefined) => void;
-  inView: boolean;
-  entry?: IntersectionObserverEntry | undefined;
-}
-
 const TeaserPage = () => {
-  // const [elements, setElements] = useState<Element[]>([]);
-  const refs = useRef<
-    | React.MutableRefObject<HTMLHeadingElement>
-    | React.MutableRefObject<HTMLButtonElement>
-    | null
-  >(null);
-  const { inViewRef, inView }: InViewRefs = useInView({
-    threshold: 1,
-    rootMargin: "0px",
-    root: null,
-    triggerOnce: true,
-  });
-
-  const setRefs: RefCallback<
-    | React.MutableRefObject<HTMLHeadingElement>
-    | React.MutableRefObject<HTMLButtonElement>
-    | Element
-  > = useCallback(
-    (
-      node:
-        | React.MutableRefObject<HTMLHeadingElement>
-        | React.MutableRefObject<HTMLButtonElement>
-        | null
-    ) => {
-      // Ref's from useRef needs to have the node assigned to `current`
-      refs.current = node;
-      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
-      inViewRef(node);
-    },
-    [inViewRef]
-  );
-
-  // const headline = useRef() as React.MutableRefObject<HTMLHeadingElement>;
-  // const button = useRef() as React.MutableRefObject<HTMLButtonElement>;
-
-  // const headline = useRef<HTMLHeadingElement>(null);
-  // const button = useRef<HTMLButtonElement>(null);
-
-  // const options = useMemo(() => {
-  //   return {
-  //     root: null,
-  //     rootMargin: "0px",
-  //     threshold: 1.0,
-  //   };
-  // }, []);
-
-  // const slideOnScroll = (
-  //   entries: IntersectionObserverEntry[],
-  //   observer: IntersectionObserver
-  // ) => {
-  //   const [entry] = entries;
-  //   setElements((prevState: any) => [...prevState, entry.target]);
-
-  //   if (entry.isIntersecting) {
-  //     entry.target.classList.add("slide-active");
-  //     observer.unobserve(entry.target);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(slideOnScroll, options);
-
-  // console.log(elements);
-
-  // observer.observe(headline.current);
-  // observer.observe(button.current);
-  // }, [elements, options]);
-
   return (
-    <TeaserContainer>
-      <TeaserTitle
-        className={`slide ${inView ? "slide-active" : ""}`}
-        ref={setRefs}
-      >
-        Да ли сте довољно креативни за наш универзум?
-      </TeaserTitle>
-      <ExploreButton
-        className={`slide ${inView ? "slide-active" : ""}`}
-        ref={setRefs}
-      >
+    <TeaserContainer data-aos="fade-down">
+      <TeaserTitle>Да ли сте довољно креативни за наш универзум?</TeaserTitle>
+      <ExploreButton>
         <a href="https://forms.gle/cMMMAjbxwquomP178">Пријави се</a>
       </ExploreButton>
     </TeaserContainer>

@@ -61,7 +61,7 @@ const Header = () => {
   useEffect(() => {
     // check viewport size
     const vw = Math.max(window.innerWidth || 0);
-    if (vw > 768) {
+    if (vw > 1250) {
       setHeaderItems(
         <Container>
           <VideoRef vid={"/newVideo.mp4"} ref={vidRef} />
