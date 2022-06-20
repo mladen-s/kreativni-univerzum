@@ -64,7 +64,12 @@ const Header = () => {
     if (vw > 1250) {
       setHeaderItems(
         <Container>
-          <VideoRef vid={"/newVideo.mp4"} ref={vidRef} />
+          <VideoRef
+            vid={"/newVideo.mp4"}
+            controls={false}
+            autoplay={true}
+            ref={vidRef}
+          />
           <div className="logo">
             <Image
               src="/logo-inverted.png"
@@ -99,6 +104,12 @@ const Header = () => {
             ></Image>
           </div>
           <h1 className="site-title">Креативни Универзум</h1>
+          <VideoRef
+            vid={"/newVideo.mp4"}
+            controls={true}
+            autoplay={false}
+            ref={vidRef}
+          />
           <ScrollDownButton></ScrollDownButton>
         </Container>
       );

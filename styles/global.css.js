@@ -146,7 +146,16 @@ ${"" /* ################# Slide ############### */}
   }
 
   .site-title {
-    margin-top: -10px;
+    margin-top: 20px;
+  }
+
+  .video-container {
+    position: relative;
+    object-fit: cover;
+    margin: 0 10px;
+    padding: 0;
+    border: 3px solid var(--orange-medium);
+    border-radius: 5%;
   }
 
 }

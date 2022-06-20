@@ -23,7 +23,6 @@ const StyledSDB = styled(Button)`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: 250px;
   }
 `;
 

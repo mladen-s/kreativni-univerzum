@@ -2,11 +2,20 @@ import React from "react";
 
 interface IVideo {
   vid: string;
+  controls: boolean;
+  autoplay: boolean;
 }
 
-const Video = ({ vid }: IVideo, ref: any) => {
+const Video = ({ vid, controls, autoplay }: IVideo, ref: any) => {
   return (
-    <video className="video-container" ref={ref} muted autoPlay loop>
+    <video
+      className="video-container"
+      ref={ref}
+      muted
+      autoPlay={autoplay}
+      loop
+      controls={controls}
+    >
       <source src={vid} type="video/mp4" />
     </video>
   );
