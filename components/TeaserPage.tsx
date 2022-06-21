@@ -1,15 +1,15 @@
 import ExploreButton from "./ExploreButton.style";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import React from "react";
 
 const TeaserTitle = styled.h1`
-  color: var(--blue-light);
+  color: var(--orange-medium);
   font-size: 3.5rem;
   margin: -100px 0 0;
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
-    margin: -50px 0 0;
+    margin: 0 0;
   }
 
   @media screen and (max-height: 650px) and (min-width: 800px) {
@@ -36,7 +36,7 @@ const TeaserContainer = styled.div`
     width: 100%;
     top: -30px;
     left: 0;
-    background-color: var(--blue-light);
+    background-color: var(--orange-medium);
     opacity: 0.4;
   }
 
@@ -58,40 +58,10 @@ const TeaserContainer = styled.div`
 `;
 
 const TeaserPage = () => {
-  const options = {
-    rootMargin: "0px",
-    threshold: 0.5,
-  };
-
-  useEffect(() => {
-    const sliders = document.querySelectorAll(".slide");
-
-    const appearOnScroll = new IntersectionObserver(function (
-      entries,
-      appearOnScroll
-    ) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("slide-active");
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    },
-    options);
-
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
-    });
-  }, [options]);
-
   return (
     <TeaserContainer>
-      <TeaserTitle className="slide">
-        Да ли сте довољно креативни за наш универзум?
-      </TeaserTitle>
-      <ExploreButton className="slide">
+      <TeaserTitle>Да ли сте довољно креативни за наш универзум?</TeaserTitle>
+      <ExploreButton>
         <a href="https://forms.gle/cMMMAjbxwquomP178">Пријави се</a>
       </ExploreButton>
     </TeaserContainer>

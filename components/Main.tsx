@@ -9,6 +9,7 @@ const StyledMain = styled.main`
 
   z-index: 1;
   height: 100vh;
+  overflow: hidden;
 
   padding: 7% 10% 0;
   display: flex;

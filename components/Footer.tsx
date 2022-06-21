@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
   flex: 0 0 auto;
   flex-direction: column;
   justify-content: center;
-  color: var(--blue-light);
+  color: var(--orange-medium);
 
   .icons {
     margin: 0 0 20px 0;
@@ -26,7 +26,7 @@ const StyledFooter = styled.footer`
       width: 100%;
       bottom: 0;
       left: 0;
-      background-color: var(--blue-light);
+      background-color: var(--orange-medium);
       opacity: 0.3;
     }
   }
@@ -76,7 +76,7 @@ const Footer = () => {
       </div>
       <Copyright>
         <BiCopyright />
-        2021, Креативни Универзум
+        2021-2022, Креативни Универзум
       </Copyright>
     </StyledFooter>
   );

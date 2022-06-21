@@ -9,7 +9,7 @@ const ExploreButton = styled(Button)`
   font-family: "Caveat", "Arsenal", serif;
   font-weight: 700;
   background-color: var(--blue-dark) 1;
-  color: var(--blue-light);
+  color: var(--orange-medium);
   border: 5px solid transparent;
   z-index: 2;
   cursor: pointer;
@@ -21,7 +21,7 @@ const ExploreButton = styled(Button)`
     position: absolute;
     height: 0.1rem;
     width: 0;
-    background-color: var(--blue-light);
+    background-color: var(--orange-medium);
     z-index: 3;
   }
   &::before {
@@ -44,7 +44,7 @@ const ExploreButton = styled(Button)`
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
-    margin: 150px 0 0;
+    margin: 250px 0 0;
   }
 `;
 

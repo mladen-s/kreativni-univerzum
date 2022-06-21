@@ -6,6 +6,11 @@ export default createGlobalStyle`
   --blue-dark: #052241;
   --blue-medium: #204174;
   --blue-light: #b3e6ec;
+  --orange-medium: #fabd52;
+  --gray-dark: #52514f;
+  --grey-medium: #85837f;
+  --gray-darkest: #2b2b2a;
+  --gray-light: #cccac6;
 }
 
 html,
@@ -48,13 +53,7 @@ h1,
   }
 /* ########### */
 
-body {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-body::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
+
 
 .root {
   width: 100%;
@@ -72,7 +71,7 @@ body::-webkit-scrollbar {
 }
 .site-title {
   display: block;
-  color: var(--blue-light);
+  color: var(--orange-medium);
   padding: 30px;
   z-index: 2;
   white-space: normal;
@@ -88,7 +87,10 @@ body::-webkit-scrollbar {
   z-index: 2;
   position: absolute;
   top: 3%;
-  left: 3%;
+  left: 3%; 
+}
+.logo img {
+  border-radius: 45%;
 }
 
 .toggle {
@@ -113,9 +115,9 @@ ${"" /* transition */}
 
 ${"" /* ################# Slide ############### */}
 .slide {
-  transform: translateX(100%);
+  transform: translateX(500%);
   transition: transform 1000ms linear;
-  -webkit-transform: translateX(100%);
+  -webkit-transform: translateX(500%);
   -webkit-transition: transform 1000ms linear;
 }
 .slide.slide-active {
@@ -135,12 +137,31 @@ ${"" /* ################# Slide ############### */}
     font-size: 1.5rem;
   }
 
+  body {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+
   header {
     background-image: url("/IMG-5c826a4196040c2f46406090a9fb2e3d-V.jpg");
     background-size: cover;
     z-index: 2;
   }
 
+  .site-title {
+    margin-top: 20px;
+  }
+
+  .video-container {
+    position: relative;
+    margin: 0 10px;
+    padding: 0;
+    border: 3px solid var(--orange-medium);
+    border-radius: 5%;
+  }
 
 }
 
