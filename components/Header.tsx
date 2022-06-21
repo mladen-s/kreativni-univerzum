@@ -68,6 +68,7 @@ const Header = () => {
             vid={"/Kreativni_Univerzum_v1_Compressed.mp4"}
             controls={false}
             autoplay={true}
+            muted={true}
             ref={vidRef}
           />
           <div className="logo">
@@ -90,6 +91,8 @@ const Header = () => {
           </StyledButton>
         </Container>
       );
+      const vid: HTMLVideoElement | null = vidRef.current;
+      vid?.play();
     } else {
       setHeaderItems(
         <Container>
@@ -105,6 +108,7 @@ const Header = () => {
           <VideoRef
             vid={"/Kreativni_Univerzum_v1_Compressed.mp4"}
             controls={true}
+            muted={false}
             autoplay={false}
             ref={vidRef}
           />

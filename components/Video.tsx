@@ -4,14 +4,16 @@ interface IVideo {
   vid: string;
   controls: boolean;
   autoplay: boolean;
+  muted: boolean;
 }
 
-const Video = ({ vid, controls, autoplay }: IVideo, ref: any) => {
+const Video = ({ vid, controls, autoplay, muted }: IVideo, ref: any) => {
   return (
     <video
       className="video-container"
       ref={ref}
       autoPlay={autoplay}
+      muted={muted}
       loop
       controls={controls}
     >

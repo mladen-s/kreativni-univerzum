@@ -157,7 +157,6 @@ ${"" /* ################# Slide ############### */}
 
   .video-container {
     position: relative;
-    object-fit: contain;
     margin: 0 10px;
     padding: 0;
     border: 3px solid var(--orange-medium);
