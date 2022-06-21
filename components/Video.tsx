@@ -11,7 +11,6 @@ const Video = ({ vid, controls, autoplay }: IVideo, ref: any) => {
     <video
       className="video-container"
       ref={ref}
-      muted
       autoPlay={autoplay}
       loop
       controls={controls}

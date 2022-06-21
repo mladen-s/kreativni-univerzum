@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       duration: 2000,
+      once: true,
     });
 
     AOS.refresh();

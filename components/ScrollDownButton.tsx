@@ -5,6 +5,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 const StyledSDB = styled(Button)`
   appearance: none;
   position: relative;
+  margin: 35% auto 0;
   display: block;
   padding: 0.8rem 0.7rem 0;
   font-size: 2.2rem;
@@ -19,7 +20,7 @@ const StyledSDB = styled(Button)`
   transition: all 0.2s linear;
 
   &:hover {
-    transform: translateY(2rem) scale(1.3);
+    transform: translateY(1rem) scale(1.3);
   }
 
   @media screen and (max-width: 768px) {

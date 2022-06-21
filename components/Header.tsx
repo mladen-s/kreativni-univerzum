@@ -24,17 +24,17 @@ const Span = styled.span<ISpan>`
       top: 0;
       left: 0;
       margin: 0;
-      background: var(--blue-darkest);
+      background: var(--gray-darkest);
       color: white;
       border-radius: 10px;
       transition: all 0.3s linear;
       &:hover {
-        background: var(--blue-medium);
+        background: var(--gray-dark);
       }
 
       @media screen and (max-width: 768px) {
         &:hover {
-          background: var(--blue-darkest);
+          background: var(--gray-dark);
         }
       }
     `}
@@ -65,7 +65,7 @@ const Header = () => {
       setHeaderItems(
         <Container>
           <VideoRef
-            vid={"/newVideo.mp4"}
+            vid={"/Kreativni_Univerzum_v1_Compressed.mp4"}
             controls={false}
             autoplay={true}
             ref={vidRef}
@@ -78,8 +78,6 @@ const Header = () => {
               height={60}
             ></Image>
           </div>
-
-          <h1 className="site-title">Креативни Универзум</h1>
           <ScrollDownButton></ScrollDownButton>
           <StyledButton className="controls" onClick={toggle}>
             <Span>Пусти</Span>
@@ -105,7 +103,7 @@ const Header = () => {
           </div>
           <h1 className="site-title">Креативни Универзум</h1>
           <VideoRef
-            vid={"/newVideo.mp4"}
+            vid={"/Kreativni_Univerzum_v1_Compressed.mp4"}
             controls={true}
             autoplay={false}
             ref={vidRef}

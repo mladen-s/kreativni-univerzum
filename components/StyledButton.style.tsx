@@ -12,8 +12,8 @@ const StyledButton = styled(Button)`
   top: 95%;
   left: 3%;
   height: 1.5rem;
-  background-color: var(--blue-dark);
-  color: var(--blue-light);
+  background-color: var(--gray-darkest);
+  color: var(--gray-light);
   border: 1px solid black;
   border-radius: 10px;
   z-index: 2;
