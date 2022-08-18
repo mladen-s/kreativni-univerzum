@@ -24,7 +24,7 @@ interface IUL {
 }
 
 const UserList = ({ setShowList }: IUL) => {
-  const { loading, error, data } = useQuery(getUserListQuery);
+  const { loading, error, data, refetch } = useQuery(getUserListQuery);
   const [count, setCount] = useState(0);
   const [list, setList] = useState<ReactNode | ReactNode[]>();
 
@@ -43,14 +43,13 @@ const UserList = ({ setShowList }: IUL) => {
           );
         })
     );
-  }, [loading]);
+  }, [loading, data]);
 
   if (loading) return <p className="loading"> Ucitavanje...</p>;
   if (error)
     return (
       <p className="error">Doslo je do greske! Molimo osvezite stranicu.</p>
     );
-  //   if (data) console.log(data);
 
   return (
     <div className="modal lista-cekanja">
@@ -59,6 +58,7 @@ const UserList = ({ setShowList }: IUL) => {
         <MdClose
           size={"50px"}
           onClick={() => {
+            refetch();
             setShowList(false);
           }}
         />
