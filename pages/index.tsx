@@ -3,28 +3,26 @@ import Head from "next/head";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 // components
 import GlobalCSS from "../styles/global.css";
-import StyledHeader from "../components/Header";
-import TeaserPage from "../components/TeaserPage";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import Preloader from "../components/Preloader";
+import Form from "../components/Form";
+import UserList from "../components/UserList";
 import { useEffect, useState } from "react";
-
-interface prop {
-  children: JSX.Element | JSX.Element[] | undefined;
-}
-
-const Container = ({ children }: prop) => {
-  return <div>{children}</div>;
-};
+import AfterForm from "../components/AfterForm";
 
 const Home: NextPage = () => {
-  const [loaded, setLoaded] = useState(false);
-  // const [explored, setExplored] = useState(false);
-  // const [mainItems, setMainItems] = useState<JSX.Element>();
+  // const [loaded, setLoaded] = useState(false);
+  const [completed, setCompleted] = useState(false);
+  const [showList, setShowList] = useState(false);
+  const [lista, setLista] = useState<JSX.Element>(<p></p>);
+  const [ime, setIme] = useState("");
+  const [prezime, setPrezime] = useState("");
+  const [email, setEmail] = useState("");
+
   useEffect(() => {
-    setLoaded(true);
-  }, []);
+    if (showList) setLista(<UserList setShowList={setShowList} />);
+    if (!showList) setLista(<p></p>);
+  }, [showList]);
 
   return (
     <div className="root">
@@ -42,7 +40,7 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <TransitionGroup>
+      {/* <TransitionGroup>
         <CSSTransition
           appear={true}
           timeout={1800}
@@ -51,10 +49,33 @@ const Home: NextPage = () => {
         >
           <StyledHeader></StyledHeader>
         </CSSTransition>
-      </TransitionGroup>
+      </TransitionGroup> */}
 
       <Main>
-        <TeaserPage />
+        {!completed ? (
+          <Form
+            ime={ime}
+            prezime={prezime}
+            email={email}
+            setIme={setIme}
+            setPrezime={setPrezime}
+            setEmail={setEmail}
+            setCompleted={setCompleted}
+          />
+        ) : (
+          <AfterForm />
+        )}
+        <div className="loading">
+          <p>Proverite listu cekanja klikom na dugme ispod.</p>
+          <button
+            onClick={() => {
+              setShowList(true);
+            }}
+          >
+            Lista
+          </button>
+        </div>
+        {lista}
         <Footer />
       </Main>
     </div>

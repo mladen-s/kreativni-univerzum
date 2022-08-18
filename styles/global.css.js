@@ -7,6 +7,11 @@ export default createGlobalStyle`
   --blue-medium: #204174;
   --blue-light: #b3e6ec;
   --orange-medium: #fabd52;
+  --gray-dark: #52514f;
+  --grey-medium: #85837f;
+  --gray-darkest: #2b2b2a;
+  --gray-light: #cccac6;
+  --black-medium: #212020;
 }
 
 html,
@@ -49,13 +54,7 @@ h1,
   }
 /* ########### */
 
-body {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-body::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
+
 
 .root {
   width: 100%;
@@ -98,7 +97,57 @@ body::-webkit-scrollbar {
 .toggle {
   left: 50% !important;
 }
+.loading, .error {
+  color: var(--orange-medium);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.loading button {
+    appearance: none;
+    border: none;
+    margin: 10px auto;
+    background-color: var(--gray-darkest);
+    color: var(--orange-medium);
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+.loading button:hover {
+    background-color: var(--gray-dark);
+    cursor: pointer;
+}
+.modal {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  top: 5%;
+  left: 10%;
+  height: 87%;
+  width: 80%;
+  opacity: 0.9;
+  z-index: 999;
+  box-shadow: 100%;
+  background-color: var(--black-medium);
+}
+.close {
+  position: fixed;
+  top: 9%;
+  right: 13%;
 
+  background: transparent;
+  border: none;
+}
+.close :first-child {
+  color: var(--orange-medium);
+}
+.close :first-child:hover {
+    cursor: pointer;
+  }
 
 ${"" /* transition */}
 .transition-appear {
@@ -139,6 +188,14 @@ ${"" /* ################# Slide ############### */}
     font-size: 1.5rem;
   }
 
+  body {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+
   header {
     background-image: url("/IMG-5c826a4196040c2f46406090a9fb2e3d-V.jpg");
     background-size: cover;
@@ -146,7 +203,15 @@ ${"" /* ################# Slide ############### */}
   }
 
   .site-title {
-    margin-top: -10px;
+    margin-top: 20px;
+  }
+
+  .video-container {
+    position: relative;
+    margin: 0 10px;
+    padding: 0;
+    border: 3px solid var(--orange-medium);
+    border-radius: 5%;
   }
 
 }

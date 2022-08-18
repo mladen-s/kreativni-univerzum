@@ -9,7 +9,7 @@ const TeaserTitle = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
-    margin: -50px 0 0;
+    margin: 0 0;
   }
 
   @media screen and (max-height: 650px) and (min-width: 800px) {
@@ -59,7 +59,7 @@ const TeaserContainer = styled.div`
 
 const TeaserPage = () => {
   return (
-    <TeaserContainer data-aos="fade-down">
+    <TeaserContainer>
       <TeaserTitle>Да ли сте довољно креативни за наш универзум?</TeaserTitle>
       <ExploreButton>
         <a href="https://forms.gle/cMMMAjbxwquomP178">Пријави се</a>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { BsInstagram } from "react-icons/bs";
+import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiCopyright } from "react-icons/bi";
+import { ImFacebook2 } from "react-icons/im";
 
 const StyledFooter = styled.footer`
   padding: 20px;
@@ -71,12 +72,21 @@ const Footer = () => {
     <StyledFooter>
       <div className="icons">
         <a href="https://www.instagram.com/creative_universe_srbija/">
-          <BsInstagram /> Instagram
+          <BsInstagram />
+        </a>
+        <a href="https://twitter.com/MilosJo86297144">
+          <BsTwitter />
+        </a>
+        <a href="https://www.youtube.com/channel/UCCJk_XXzSuSAJ0452NkhilA">
+          <BsYoutube />
+        </a>
+        <a href="https://www.facebook.com/creativeuniverseserbia/">
+          <ImFacebook2 />
         </a>
       </div>
       <Copyright>
         <BiCopyright />
-        2021, Креативни Универзум
+        2021-2022, Креативни Универзум
       </Copyright>
     </StyledFooter>
   );
